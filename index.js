@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-import puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
 
 const port = 1000;
 
