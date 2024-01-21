@@ -39,6 +39,6 @@ app.post("/pdf", async function (req, res) {
 
 app.listen(3000, () => {
   return console.log(
-    `Express server is listening at http://localhost:${port} 🚀`
+    `Express server is listening at http://localhost:${3000} 🚀`
   );
 });
