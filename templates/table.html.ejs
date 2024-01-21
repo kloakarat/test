@@ -1,18 +1,31 @@
-<table class="table">
-  <thead>
+<table>
+  <thead style="border-top: 1px solid #bbb; border-bottom: 3px solid #bbb">
     <tr>
-      <th>id</th>
-      <th>First name</th>
-      <th>Last name</th>
+      <th scope="col">#</th>
+      <th scope="col">ชื่อสินค้า</th>
+      <th scope="col">จำนวน</th>
+      <th scope="col">ราคาต่อหน่วย</th>
+      <th scope="col">ราคารวม</th>
     </tr>
   </thead>
-  <tbody>
-    <% for (var i = 0; i < rows.length; i++) { %>
-      <tr>
-        <td><%= rows[i].id %></td>
-        <td><%= rows[i].first_name %></td>
-        <td><%= rows[i].last_name %></td>
-      </tr>
+  <tbody style="border-top: 1px solid #bbb !important; border-bottom: 3px solid #bbb !important;">
+    <% for (var i = 0; i < items.length; i++) { %>
+    <tr>
+      <td><%= items[i].no %></td>
+      <td><%= items[i].name %></td>
+      <td style="text-align: right;"><%= items[i].quantity %></td>
+      <td style="text-align: right;"><%= items[i].pricePerUnit %></td>
+      <td style="text-align: right;"><%= items[i].total %></td>
+    </tr>
     <% } %>
   </tbody>
+  <tfoot>
+    <tr style="height: 5em; vertical-align: bottom">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="font-weight: bold; text-align: right">Total</td>
+      <td style="text-align: right">100</td>
+    </tr>
+  </tfoot>
 </table>

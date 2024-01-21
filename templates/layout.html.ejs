@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title></title>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      html {
+        font-family: "Sarabun", sans-serif;
+        font-size: 16px;
+      }
+      hr.solid {
+        border-top: 3px solid #bbb;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      tfoot {
+        border-top: 3px solid #bbb;
+      }
+      td,
+      th {
+        padding: 8px;
+      }
 
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
     </style>
   </head>
   <body>
-    <%- body %>
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <h2>#<%= receipt.docId %></h2>
+            <hr class="solid" />
+            <div style="display: flex; justify-content: space-between">
+              <div>
+                <%= receipt.contactName %><br />
+                <%= receipt.contactAddress %>,&nbsp<%=
+                receipt.contactSubDistrict %><br />
+                <%= receipt.contactDistrict %>,&nbsp<%= receipt.contactProvince
+                %>,&nbsp<%= receipt.contactZipCode %><br />
+                <%= receipt.contactTel %><br />
+              </div>
+              <div><%= receipt.docDate %><br /></div>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div><%- tableHtml %></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
