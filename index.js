@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const puppeteer = require("puppeteer");
+const { scrapeLogic } = require("./scrapeLogic");
 
 const port = 1000;
 
@@ -10,9 +10,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/pdf", (req, res) => {
-  puppeteer.launch();
-  res.send("Hello World");
+    scrapeLogic(res);
 });
+
 app.listen(port, () => {
   console.log(`Start server at port ${port}`);
 });
