@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.get("/pdf", (req, res) => {
+app.post("/pdf", (req, res) => {
   const body = req.body;
   genPdf(res, body);
 });
