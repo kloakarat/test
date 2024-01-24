@@ -20,12 +20,33 @@
     <% } %>
   </tbody>
   <tfoot>
-    <tr style="height: 5em; vertical-align: bottom">
+    <tr vertical-align: bottom">
       <td></td>
       <td></td>
       <td></td>
-      <td style="font-weight: bold; text-align: right">Total</td>
-      <td style="text-align: right">100</td>
+      <td style="font-weight: bold; text-align: right">รวมเป็นเงิน</td>
+      <td style="text-align: right"><%= receipt.subTotal %></td>
+    </tr>
+    <tr vertical-align: bottom">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="font-weight: bold; text-align: right">ส่วนลด</td>
+      <td style="text-align: right"><%= receipt.totalAfterDiscount %></td>
+    </tr>
+    <tr vertical-align: bottom">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="font-weight: bold; text-align: right">ยอดรวมสุทธิ</td>
+      <td style="text-align: right"><%= receipt.totalIncludetVat %></td>
+    </tr>
+    <tr vertical-align: bottom">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="font-weight: bold; text-align: right">ยอดชำระ</td>
+      <td style="text-align: right"><%= receipt.totalIncludetVat %></td>
     </tr>
   </tfoot>
 </table>
