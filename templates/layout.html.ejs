@@ -43,8 +43,11 @@
             <hr class="solid" />
             <div style="display: flex; justify-content: space-between">
               <div>
+                <%= receipt.contactName %>
                 <%- receipt.contactAddressText %> <br />
-                (<%= receipt.contactTel %>)
+                <% if(receipt.contactTel != ''){ %>
+                  (<%= receipt.contactTel %>)
+                <% } %>
               </div>
               <div><%= receipt.docDate %> <br /></div>
             </div>
