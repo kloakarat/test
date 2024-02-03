@@ -39,18 +39,15 @@
       <thead>
         <tr>
           <td>
-            <h2>#<%= receipt.docId %></h2>
+            <!-- <h2>#<%= receipt.docId %></h2> -->
+            <%- receipt.title%>
             <hr class="solid" />
             <div style="display: flex; justify-content: space-between">
               <div>
-                <%= receipt.contactName %><br />
-                <%= receipt.contactAddress %>,&nbsp<%=
-                receipt.contactSubDistrict %><br />
-                <%= receipt.contactDistrict %>,&nbsp<%= receipt.contactProvince
-                %>,&nbsp<%= receipt.contactZipCode %><br />
-                <%= receipt.contactTel %><br />
+                <%- receipt.contactAddressText %> <br />
+                (<%= receipt.contactTel %>)
               </div>
-              <div><%= receipt.docDate %><br /></div>
+              <div><%= receipt.docDate %> <br /></div>
             </div>
           </td>
         </tr>
