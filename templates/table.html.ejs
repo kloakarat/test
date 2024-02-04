@@ -1,11 +1,11 @@
 <table>
   <thead style="border-top: 1px solid #bbb; border-bottom: 3px solid #bbb">
     <tr>
-      <th scope="col">ไซส์</th>
-      <th scope="col">กุ้ง</th>
-      <th scope="col">น้ำหนัก</th>
-      <th scope="col">ราคา</th>
-      <th scope="col">จำนวนเงิน</th>
+      <th scope="col" style="width: 30%;">ไซส์</th>
+      <th scope="col" style="width: 20%;">กุ้ง</th>
+      <th scope="col" style="width: 20%;">น้ำหนัก</th>
+      <th scope="col" style="width: 15%;">ราคา</th>
+      <th scope="col" style="width: 15%;">จำนวนเงิน</th>
     </tr>
   </thead>
   <tbody style="border-top: 1px solid #bbb !important; border-bottom: 3px solid #bbb !important; font-size: 14px;">
@@ -18,35 +18,25 @@
       <td style="text-align: right;"><%= items[i].totalText %></td>
     </tr>
     <% } %>
+    <% if(receipt.sumQuantityText != ''){ %>
+    <tr style="border-top: 1px solid #bbb;">
+      <td colspan="2" style="text-align: right"> น้ำหนักรวม</td>
+      <td style="text-align: right"><%= receipt.sumQuantityText  %></td>
+    </tr>
+    <% } %>
   </tbody>
   <tfoot>
-    <tr vertical-align: bottom">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td style="font-weight: bold; text-align: right">รวมเป็นเงิน</td>
-      <td style="text-align: right"><%= receipt.subTotalText %></td>
+    <tr style="vertical-align: bottom">
+      <td colspan="3" style="padding-top: 50px; font-weight: bold; text-align: right">รวมเป็นเงิน</td>
+      <td colspan="2" style="padding-top: 50px; text-align: right"><%= receipt.subTotalText %></td>
     </tr>
-    <tr vertical-align: bottom">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td style="font-weight: bold; text-align: right">ส่วนลด</td>
-      <td style="text-align: right"><%= receipt.discountText %></td>
+    <tr style="vertical-align: bottom">
+      <td colspan="3" style="font-weight: bold; text-align: right">ส่วนลด</td>
+      <td colspan="2" style="text-align: right"><%= receipt.discountText %></td>
     </tr>
-    <tr vertical-align: bottom">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td style="font-weight: bold; text-align: right">ยอดรวมสุทธิ</td>
-      <td style="text-align: right"><%= receipt.totalText %></td>
+    <tr style="vertical-align: bottom">
+      <td colspan="3" style="font-weight: bold; text-align: right">ยอดรวมสุทธิ</td>
+      <td colspan="2" style="text-align: right; border-bottom: 3px double #bbb;"><%= receipt.totalText %></td>
     </tr>
-    <!-- <tr vertical-align: bottom">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td style="font-weight: bold; text-align: right">ยอดชำระ</td>
-      <td style="text-align: right"><%= receipt.totalIncludetVat %></td>
-    </tr> -->
   </tfoot>
 </table>
