@@ -52,8 +52,8 @@ const genPdf = async (res, receipt) => {
 </body>
 </html>
 `;
-    // await page.setContent(html, { waitUntil: "load" });
-    await page.goto('data:text/html,' + document, {waitUntil: "networkidle0"});
+    await page.setContent(html, { waitUntil: "networkidle0" });
+    // await page.goto(html, {waitUntil: "networkidle0"});
 
     const options = {
       format: "A4",
